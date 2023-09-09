@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Feature
 
 # Create your views here.
 def index(request):
@@ -12,6 +13,11 @@ def index(request):
     #    'age': 25,
     #    'nationality':'Nigerian'
     #}
+    
+    feature1 = Feature()
+    feature1.id = 0
+    feature1.name = 'fast'
+    feature1.details = ' Our service is fast'
 
     return render(request,'index.html') #add context inside the parentheses to render the data
 
